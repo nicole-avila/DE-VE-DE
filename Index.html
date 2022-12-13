@@ -4,14 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DE-VE-DE</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js" type="module"></script>
 </head>
 <body>
-    
-
-
-
-    <script type="module" src="js/script.js"></script>
+<header>
+    <figure class="circle">
+        <div class="logo"></div>
+        <div class="header-text">
+            <h1>&#8226DE-VE-DE&#8226</h1>
+        </div>
+    </figure>
+</header>
+<nav>
+    <input type="text" placeholder="Title" id="title">
+    <input type="text" placeholder="Genre" id="genre">
+    <input type="text" placeholder="Released" id="released">
+    <button id="btnSubmit">Add you movie!</button>
+    <aside>
+        <input type="text" placeholder="Search" id="search">
+        <button class="btnSearch">sök film</button>
+    </aside>
+</nav>
+<main>
+    <section>
+        <!-- <button type="button" class="collapsible">  -->
+            <h2>Search Result</h2>
+            <article id="searchResult"></article>
+        <!-- </button> -->
+    </section>
+    <section>
+        <!-- <button type="button" class="collapsible">  -->
+            <h2>WATCHLIST</h2>
+            <article id="toSee"></article>
+        <!-- </button> -->
+    </section>
+    <section>
+        <!-- <button type="button" class="collapsible">  -->
+            <h2>WATCHED MOVIES</h2>
+            <article id="watched"></article>
+        <!-- </button> -->
+    </section>
+</main>
+<footer>
+    <div class="movie-img"></div>
+</footer>
 </body>
 </html>
