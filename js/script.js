@@ -1,23 +1,5 @@
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  import { getFirestore, collection, addDoc , getDocs, deleteDoc,doc, 
-    updateDoc, query, where, increment } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+import { db, collection, addDoc , getDocs, deleteDoc, doc, updateDoc, query, where } from "./Modules/firebase.js"
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBDo8IMD8fEuPkCJwDfmIa46AIOaxN5gf0",
-    authDomain: "slutexamination-wk.firebaseapp.com",
-    projectId: "slutexamination-wk",
-    storageBucket: "slutexamination-wk.appspot.com",
-    messagingSenderId: "741707634061",
-    appId: "1:741707634061:web:e5f91d7df6b361290f59c4"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app); 
   const btn = document.querySelector(`#btnSubmit`);
   const title = document.querySelector(`#title`);
   const genre = document.querySelector(`#genre`);
@@ -51,7 +33,6 @@ header.innerHTML = header.innerText.split("").map(
 //   }
 // }
   // showCollDisplay ()
-
 
 let movieInput = {
   title: ``,
@@ -164,47 +145,41 @@ const searchInput = document.querySelector(`#search`);
 const btnSearch = document.querySelector(`#btnSearch`);
 
 
-  btnSearch.addEventListener(`click`, () => {
-    const searchValue = searchInput.value 
-    console.log(searchValue);
-    showSearchResult(searchValue)
+btnSearch.addEventListener(`click`, async () => {
+  const searchValue = searchInput.value 
+  const movieExist = searchValue.id 
 
-    searchInput.value = ``;
-    searchDisplay.innerText = ``;
+if (searchValue == ``) {
+    alert (`You need to type a title from a movie`);
+if (movieExist) { showSearchResult(searchValue)
+} else 
+    searchDisplay.innerText = `Movie not found`
+}
+  showSearchResult(searchValue)
+  searchInput.value = ``;
+  searchDisplay.innerText = ``;
 });
+
 
 async function showSearchResult(searchValue) {
 const searchDisplay = document.querySelector(`#searchDisplay`);
 
-      try {
-        const searchQuery = query(collection(db, `de-ve-de`), where(`title`, `==`, searchValue));
-        const result = await getDocs(searchQuery);
-        searchDisplay.innerText = ``;
+    try {
+      const searchQuery = query(collection(db, `de-ve-de`), where(`title`, `==`, searchValue));
+      const result = await getDocs(searchQuery);
+      searchDisplay.innerText = ``;
 
-      if (searchValue == ``) {
-        alert (`You need to type a title from you watchlist`)
-      } 
-        result.forEach((movie) => {
-        const el= `
-        <li movie-id=${movie.id}>
-        <p>Titel: ${movie.data().title}</p>
-        <p>Genre: ${movie.data().genre}</p>
-        <p>Released: ${movie.data().released}</p>
-        </li>
-          `
-        searchDisplay.insertAdjacentHTML(`beforeend`, el);
-      });
-    }catch (error) {
-      console.log(`ERROR`);
-    }
+      result.forEach((movie) => {
+      const el= `
+      <li movie-id=${movie.id}>
+      <p>Titel: ${movie.data().title}</p>
+      <p>Genre: ${movie.data().genre}</p>
+      <p>Released: ${movie.data().released}</p>
+      </li>
+        `
+      searchDisplay.insertAdjacentHTML(`beforeend`, el);
+    });
+  }catch (error) {
+    console.log(`ERROR`);
   }
-
-
-
-
-
-
-  
-
-
- 
+}
