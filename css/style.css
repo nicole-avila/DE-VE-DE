@@ -69,7 +69,10 @@ input {
     width: 200px;
     height: 25px;
 }
-
+#searchDisplay {
+    display: flex;
+    justify-content: center;
+}
 #btnSubmit {
     border-radius: 10px;
     height: 25px;
@@ -98,14 +101,15 @@ h2 {
     justify-content: center;
     align-items: center;
 }
-.watchedMovie {
 
-    cursor: pointer;
-}
 li {
     list-style: none;
     padding-top: 1rem;
 }
+.watchedBtn {
+    cursor: pointer;
+}
+
 /* .collapsible {
     background-color: #777;
     color: white;
@@ -129,10 +133,7 @@ li {
     overflow: hidden;
     background-color: #f1f1f1;
 } */
-#saved {
-    display: flex;
-    justify-content: center;
-}
+
 #toSee {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

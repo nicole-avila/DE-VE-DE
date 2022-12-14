@@ -82,7 +82,6 @@ async function saveToDatabase(movieInput) {
     }
   }
 
-
 async function getMovieInput() {
     const movieList = await getDocs(collection(db, `de-ve-de`));
     toSeeMovie.innerText = ``;
@@ -94,7 +93,7 @@ async function getMovieInput() {
             <p id="title-${list.id}">Titel: ${list.data().title}</p>
             <p id="genre-${list.id}">Genre: ${list.data().genre}</p>
             <p id="released-${list.id}">Released: ${list.data().released}</p>
-            <button class="watchedMovie">Watched Movie</button>
+            <button class="watchedBtn">Watched Movie</button>
             </li>
       `
 
@@ -103,7 +102,6 @@ async function getMovieInput() {
   });
     removeMovieInput()
 }
-
 
 function removeMovieInput() {
   const movie = document.querySelectorAll(`li`);
@@ -161,58 +159,52 @@ async function getCompletedMovies() {
   });
 
 }
-// saveAllMovies()
 
-// const searchInput = movieInput.title;
-// async function searchInputList() {
+const searchInput = document.querySelector(`#search`);
+const btnSearch = document.querySelector(`#btnSearch`);
+
+
+  btnSearch.addEventListener(`click`, () => {
+    const searchValue = searchInput.value 
+    console.log(searchValue);
+    showSearchResult(searchValue)
+
+    searchInput.value = ``;
+    searchDisplay.innerText = ``;
+});
+
+async function showSearchResult(searchValue) {
+const searchDisplay = document.querySelector(`#searchDisplay`);
+
+      try {
+        const searchQuery = query(collection(db, `de-ve-de`), where(`title`, `==`, searchValue));
+        const result = await getDocs(searchQuery);
+        searchDisplay.innerText = ``;
+
+      if (searchValue == ``) {
+        alert (`You need to type a title from you watchlist`)
+      } 
+        result.forEach((movie) => {
+        const el= `
+        <li movie-id=${movie.id}>
+        <p>Titel: ${movie.data().title}</p>
+        <p>Genre: ${movie.data().genre}</p>
+        <p>Released: ${movie.data().released}</p>
+        </li>
+          `
+        searchDisplay.insertAdjacentHTML(`beforeend`, el);
+      });
+    }catch (error) {
+      console.log(`ERROR`);
+    }
+  }
+
+
+
+
+
+
+  
+
 
  
-//   console.log(searchInput);
-//   console.log(search);
-//     try {
-//         const searchQuery = query (collection(db, `de-ve-de`), where(`title`, `==`, `searchInput`)); // movieInput.title ?? 
-//         const result = await getDocs(searchQuery);
-//         let resultSearch = {}; 
-
-//         result.forEach((title) => {
-//           resultSearch = title; 
-//     });
-//         return resultSearch
-//     } catch (error){
-//     console.log(error);
-//   }
-// }
-
-// const btnSearch = document.querySelector(`.btnSearch`)
-//   btnSearch.addEventListener(`click`, async () => {
-//     const movie = await searchInputList(); 
-//     const movieElem = movie.id
-//     if(movieElem){
-//     showSearchResult(movie);
-//     } else {
-//       alert(`hittar inte filmen`)
-//     }
-//     console.log(movieResult);
-//     console.log(movieElem);
-//     // searchInput.value = ``;
-//     // searchResult.innerText = ``;
-// })
-
-
-
-
-// async function showSearchResult(movie) {
-//     const searchResult = document.querySelector(`#searchResult`);
-
-//     const element = `
-//         <li movie-id=${movie.id}>
-//     <p id="${movie.id}-title">${movie.data().title}</p>
-//     <p id="${movie.id}-genre">${movie.data().genre}</p>
-//     <p id="${movie.id}-released">${movie.data().released}</p>
-//     </li>
-//     `
-//     // const id = `${movie.id}`;
-//     searchResult.insertAdjacentHTML(`beforeend`, element);
-  
-//   }
-
