@@ -1,6 +1,13 @@
-import { db, collection, addDoc, deleteDoc, doc } from "./firebase.js"
-import { getMovieInput, getCompletedMovies } from "../script.js";
+/* 
+Here can you find two function. One for saving all inputValue to the database and 
+the other function removing doc/object from the database, and adding in 
+another collection, "completedMovies"
 
+I decide to put everything that have to do with saving (addDoc), 
+adding a new collection or delete Docs from database in one module. 
+*/
+import { collection, db, addDoc, deleteDoc, doc } from "./firebase.js"
+import { getMovieInput, getCompletedMovies } from "../script.js";
 
 async function saveToDatabase(movieInput) {
   try {

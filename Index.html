@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DE-VE-DE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    
+    
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/script.js" type="module"></script>
 </head>
@@ -17,22 +26,13 @@
         </div>
     </figure>
 </header>
-<aside>
+<aside>    
     <input type="text" placeholder="Search movie" id="search">
     <button id="btnSearch">Submit!</button>
+
 </aside>
 <nav>
-    <!-- <figure class="headline-curve">
-        <div class="headline-text"> -->
-<svg viewBox="0 0 500 500">
-    <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-        <text width="500">
-            <textPath xlink:href="#curve">
-            ADD YOUR MOVIE IN YOUR FAVORITE LIST
-         </textPath>
-    </text>
-  </svg>
-            <h1></h1>
+    <h1>ADD A MOVIE IN YOUR FAVORITE LIST</h1>
     <input type="text" placeholder="Movie Title" id="title">
     <input type="text" placeholder="Genre" id="genre">
     <input type="text" placeholder="Released" id="released">
@@ -40,24 +40,19 @@
 </nav>
 
 <main>
-    <section>     
-
-        <!-- <button type="button" class="collapsible"> -->
+    <section>   
+        <fieldset>  
             <h2>SEARCH RESULT</h2> 
-            <article id="searchDisplay"></article>
-        <!-- </button> -->
+                <article id="searchDisplay"></article>
+            </fieldset>
     </section>
     <section>
-        <!-- <button type="button" class="collapsible">  -->
             <h2>FAVORITES &#9829</h2>
             <article id="favorite"></article>
-        <!-- </button> -->
     </section>
     <section>
-        <!-- <button type="button" class="collapsible">  -->
             <h2>WATCHED MOVIES</h2>
             <article id="watched"></article>
-        <!-- </button> -->
     </section>
 </main>
 <footer>
