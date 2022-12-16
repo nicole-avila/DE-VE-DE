@@ -2,7 +2,7 @@
 the input-fields, included the function who visibly removes the "object"/docs. 
 */
 import { db, collection, getDocs } from "./modules/firebase.js";
-import { saveToDatabase, removeFromDatabase } from "./modules/save-deleteDatabase.js";
+import { removeFromDatabase } from "./modules/save-deleteDatabase.js";
 import { fetchMovieCollection } from "./modules/searchQuery.js";
 
 const header = document.querySelector(`.header-text h1`);
@@ -51,7 +51,7 @@ function removeMovieInput() {
       movieText.title = delTitle.innerText;
       movieText.genre = delGenre.innerText;
       movieText.released = delRelesed.innerText;
-      // console.log(deleteMovieId);
+
       removeFromDatabase(deleteMovieId, movieText) 
     });
   });

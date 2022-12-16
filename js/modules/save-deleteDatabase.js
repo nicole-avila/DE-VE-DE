@@ -49,7 +49,7 @@ async function removeFromDatabase(deleteMovieId, movieText) {
       getMovieInput();
       getCompletedMovies();
   } catch(error) {
-      console.log(`ERROR`, error);
+      console.log(error);
   }
 }
 
