@@ -5,28 +5,52 @@
 }
 body {
     font-family: 'Roboto Condensed';
-    background-color: rgba(210, 198, 183, 0.068);
+    background: rgb(170,163,155);
+    background: linear-gradient(0deg, rgba(170,163,155,1) 0%, rgba(255,255,255,1) 100%);
+    height: 100%;
 }
-/* Search input field AND submitBTN */
-
+/* Search input-field AND submitBTN */
+aside {
+    width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 2rem;
+}
+form {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+.search {
+    font-family: 'Roboto Condensed';
+    /* background-color:  rgb(185,178,169); */
+    width: 150px;
+    height: 25px;
+    margin-right: .5rem;
+}
+.btnSearch {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    cursor: pointer;
 }
 /* Header and Logo */
 header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    margin-left;: ()
+    margin-left: 1rem;
+    padding-bottom: 1rem;
 }
 .circle {
     position: relative;
     width: 220px;
     height: 220px;
-    background-color: rgb(172, 165, 156);
+    background-color:  rgb(185,178,169);
     border-radius: 50%;
     display: flex;
     justify-content: flex-start;
-
-    
 }
 .logo {
     position: absolute;
@@ -42,34 +66,26 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
+    animation: rotateText 10s linear infinite;
     transform: rotate(-90deg);
+}
+@keyframes rotateText {
+    0% 
+        {
+    transform: rotate(365deg);
+     }
+    100% 
+     {
+    transform: rotate(0deg);
+     }
 }
 .header-text span {
     position: absolute;
     left: 45%;
     transform-origin: 10px 110px;
 }
-aside {
-    width: 300px;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
-    padding-right: 2rem;
-}
-form {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
-}
-.search, .btnSearch {
-    font-family: 'Roboto Condensed';
-}
-.btnSearch {
-    
-}
-/* Title-Genre-ReleasedInput field */
+/* Title-Genre-Released input-field and btn */
 nav {
-    /* background-color:rgba(210, 198, 183, 0.245); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,25 +101,34 @@ nav input {
 }
 .btnAddMovie {
     font-family: 'Roboto Condensed';
-    border-radius: 10px;
-    height: 25px;
+    border: none;
+    border-radius: 30px;
+    height: 30px;
     width: 150px;
     margin: auto;
+    cursor: pointer;
+    transition: box-shadow 0.15;
+}
+.btnAddMovie:hover {
+    background-color:  rgb(185,178,169);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+.btnAddMovie:active {
+    background-color:  rgb(244, 238, 232);
 }
 /* Search-Favorites-Watched Display List */
 main {
-    background-color: rgb(172, 165, 156);
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    padding-top: 2rem;
+    min-height: 60vh;
+    padding-top: 1rem;
 }
 section {
     display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 h2 {
     display: flex;
@@ -115,6 +140,7 @@ li {
     list-style: none;
     padding-top: .5rem;
     width: auto;
+    letter-spacing: .9px;
 }
 .searchDisplay {
     display: flex;
@@ -123,24 +149,32 @@ li {
 fieldset {
     padding: .5rem;
 }
-.favorite {
+h3 {
+    color: rgb(125, 124, 121);
+    padding: 10px;
+}
+.favorite, .watched {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-auto-rows: auto;
     max-width: 1000px;
     gap: 1rem 2rem;
 }
 .watchedBtn {
     font-family: 'Roboto Condensed';
-    border-radius: 5px;
-    width: 55px;
+    border: none;
+    border-radius: 30px;
+    width: 60px;
     height: 20px;
+    margin: auto;
     cursor: pointer;
+    transition: box-shadow 0.15;
 }
-.watched {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    max-width: 1000px;
-    gap: 1rem 2rem;
+.watchedBtn:hover {
+    background-color:  rgb(185,178,169);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+.watchedBtn:active {
+    background-color:  rgb(244, 238, 232);
 }

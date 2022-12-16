@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/f7b6163535.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    
     
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/script.js" type="module"></script>
@@ -22,7 +19,7 @@
     <aside>
         <form>
             <input type="text" placeholder="Search movie" class="search" required>
-            <button class="btnSearch">Submit!</button>
+            <button class="btnSearch"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
         </form> 
     </aside>
     <figure class="circle">
@@ -30,15 +27,14 @@
         <div class="header-text">
             <h1>&#8226DE-VE-DE&#8226</h1>
         </div>
-    </figure>  
-
+    </figure> 
+    <h2>ADD A MOVIE IN YOUR FAVORITE LIST</h2>
 </header>
-<h2>ADD A MOVIE IN YOUR FAVORITE LIST</h2>
 <form>
     <nav>
-        <input type="text" placeholder="Movie Title" class="title" required>
-        <input type="text" placeholder="Genre" class="genre" required>
-        <input type="text" placeholder="Released" class="released" required>
+        <input type="text" placeholder="Movie Title" class="titleInput" required>
+        <input type="text" placeholder="Genre" class="genre">
+        <input type="text" placeholder="Release year" class="released">
         <button class="btnAddMovie">Add your movie!</button>
     </nav>
 </form>

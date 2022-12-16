@@ -1,9 +1,12 @@
 /*
-In this module you can find everything thta has to do whit the search result.
+In this module you can find everything that has to do whit the search-input and result-value.
+I decided to put all "search functions" in one module so it will be easer to locate it if 
+I want to add some changes. 
 
 The btnSearch takes the value from the inputfield and searches in the database collection, `de-ve-de`
-The function under fetchMovieCollection, ”searches”/"checks" through the collection, ”de-ve-de” for the value from the Search Field. 
-If the search gets a match from the collection it will display it. 
+The function under fetchMovieCollection, ”searches” through the database, collection, ”de-ve-de” for the value/object from the Search Field. 
+If the search gets a movieTitle who dosent exist in db, collection it will show the user "Movie do not exist..." 
+but if it gives a match from the collection it will display it in searsDisplay. 
 */
 import { db, collection, getDocs, query, where } from "./firebase.js";
 
@@ -18,7 +21,6 @@ btnSearch.addEventListener(`click`, async () => {
   fetchMovieCollection(searchValue)
   searchInput.value = ``;
   searchDisplay.innerText = ``;
-
 });
 
 async function fetchMovieCollection(searchValue) {
@@ -27,6 +29,10 @@ async function fetchMovieCollection(searchValue) {
       const result = await getDocs(searchQuery);
       searchDisplay.innerText = ``;
 
+      if (result.empty) {
+        // console.log(`No result`);
+        searchDisplay.innerHTML = `<h3>Movie do not exist in favorites list</h3>`;
+      }
       result.forEach((movie) => {
         // console.log(movie.data());
         const el= `
@@ -35,34 +41,12 @@ async function fetchMovieCollection(searchValue) {
           <p>Genre: ${movie.data().genre}</p>
           <p>Released: ${movie.data().released}</p>
         </li>
-        `
-        searchDisplay.insertAdjacentHTML(`beforeend`, el)
+        `;
+        searchDisplay.insertAdjacentHTML(`beforeend`, el);
       });
-
-
     } catch (error) {
       console.log(error);
     }
   }
-//// Edit: Trying to display IF movie-title exsist in db then show/display result, IF NOT exsist in db display `movie not found`.
-// async function displayMovieCollection(movie) { 
-//   let movieTitle = data.id
-  
-//   if (movieTitle) {
-//     const el = `
-//     <li>
-//       <p>Titel: ${movie.data().title}</p>
-//       <p>Genre: ${movie.data().genre}</p>
-//       <p>Released: ${movie.data().released}</p>
-//     </li>
-//     `
-//     searchDisplay.insertAdjacentHTML(`beforeend`, el)
-
-//   }else {
-//     searchDisplay.innerText = `Movie NOT found`
-//   }
-// };
 
 export { fetchMovieCollection }
-
-
