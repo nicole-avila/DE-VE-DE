@@ -5,7 +5,7 @@ import { db, collection, getDocs } from "./modules/firebase.js";
 import { saveToDatabase, removeFromDatabase } from "./modules/save-deleteDatabase.js";
 import { fetchMovieCollection } from "./modules/searchQuery.js";
 
-const header          = document.querySelector(`.header-text h1`);
+const header = document.querySelector(`.header-text h1`);
 const favoriteDisplay = document.querySelector(`.favorite`);
 const watchedDisplay  = document.querySelector(`.watched`);
 

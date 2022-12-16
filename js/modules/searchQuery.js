@@ -10,8 +10,8 @@ but if it gives a match from the collection it will display it in searsDisplay.
 */
 import { db, collection, getDocs, query, where } from "./firebase.js";
 
-const btnSearch     = document.querySelector(`.btnSearch`);
-const searchInput   = document.querySelector(`.search`);
+const btnSearch = document.querySelector(`.btnSearch`);
+const searchInput = document.querySelector(`.search`);
 const searchDisplay = document.querySelector(`.searchDisplay`);
 
 
@@ -30,11 +30,9 @@ async function fetchMovieCollection(searchValue) {
       searchDisplay.innerText = ``;
 
       if (result.empty) {
-        // console.log(`No result`);
-        searchDisplay.innerHTML = `<h3>Movie do not exist in favorites list</h3>`;
+        searchDisplay.innerHTML = `<h3>Movie do NOT exist in favorites list</h3>`;
       }
       result.forEach((movie) => {
-        // console.log(movie.data());
         const el= `
         <li movie-id=${movie.id}>
           <p>Titel: ${movie.data().title}</p>

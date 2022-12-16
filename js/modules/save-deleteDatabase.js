@@ -9,10 +9,11 @@ adding a new collection or delete Docs from database in one module.
 */
 import { collection, db, addDoc, deleteDoc, doc } from "./firebase.js"
 import { getMovieInput, getCompletedMovies } from "../script.js";
-const btn             = document.querySelector(`.btnAddMovie`);
-const title           = document.querySelector(`.titleInput`);
-const genre           = document.querySelector(`.genre`);
-const released        = document.querySelector(`.released`);
+
+const btn = document.querySelector(`.btnAddMovie`);
+const title = document.querySelector(`.titleInput`);
+const genre = document.querySelector(`.genre`);
+const released = document.querySelector(`.released`);
 
 let movieInput = {
   title: ``,
@@ -50,7 +51,6 @@ async function removeFromDatabase(deleteMovieId, movieText) {
   } catch(error) {
       console.log(`ERROR`, error);
   }
-  // location.reload()
 }
 
 export { saveToDatabase, removeFromDatabase }

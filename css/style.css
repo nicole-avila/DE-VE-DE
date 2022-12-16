@@ -24,7 +24,6 @@ form {
 }
 .search {
     font-family: 'Roboto Condensed';
-    /* background-color:  rgb(185,178,169); */
     width: 150px;
     height: 25px;
     margin-right: .5rem;
@@ -156,7 +155,6 @@ h3 {
 .favorite, .watched {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(3, 1fr); */
     grid-auto-rows: auto;
     max-width: 1000px;
     gap: 1rem 2rem;
@@ -177,4 +175,12 @@ h3 {
 }
 .watchedBtn:active {
     background-color:  rgb(244, 238, 232);
+}
+@media only screen and (max-width: 711px) {
+
+    .favorite, .watched {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
 }
