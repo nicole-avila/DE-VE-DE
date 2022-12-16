@@ -9,7 +9,7 @@ import { db, collection, getDocs, query, where } from "./firebase.js";
 
 const btnSearch     = document.querySelector(`.btnSearch`);
 const searchInput   = document.querySelector(`.search`);
-const searchDisplay = document.querySelector(`#searchDisplay`);
+const searchDisplay = document.querySelector(`.searchDisplay`);
 
 
 btnSearch.addEventListener(`click`, async () => {
@@ -21,7 +21,7 @@ btnSearch.addEventListener(`click`, async () => {
 
 });
 
-  async function fetchMovieCollection(searchValue) {
+async function fetchMovieCollection(searchValue) {
     try {
       const searchQuery = query(collection(db, `de-ve-de`), where(`title`, `==`, searchValue));
       const result = await getDocs(searchQuery);

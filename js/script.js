@@ -4,13 +4,13 @@ import { fetchMovieCollection } from "./modules/searchQuery.js";
 
 const header          = document.querySelector(`.header-text h1`);
 
-const btn             = document.querySelector(`#btnAddMovie`);
-const title           = document.querySelector(`#titleInput`);
-const genre           = document.querySelector(`#genre`);
-const released        = document.querySelector(`#released`);
+const btn             = document.querySelector(`.btnAddMovie`);
+const title           = document.querySelector(`.title`);
+const genre           = document.querySelector(`.genre`);
+const released        = document.querySelector(`.released`);
 
-const favoriteDisplay = document.querySelector(`#favorite`);
-const watchedDisplay  = document.querySelector(`#watched`);
+const favoriteDisplay = document.querySelector(`.favorite`);
+const watchedDisplay  = document.querySelector(`.watched`);
 
 
 header.innerHTML = header.innerText.split("").map((char, i) =>

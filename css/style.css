@@ -7,21 +7,26 @@ body {
     font-family: 'Roboto Condensed';
     background-color: rgba(210, 198, 183, 0.068);
 }
+/* Search input field AND submitBTN */
+
+}
 /* Header and Logo */
 header {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
-    padding-top: 2rem;
-    padding-left: 2rem;    
+    margin-left;: ()
 }
 .circle {
     position: relative;
     width: 220px;
     height: 220px;
-    background-color: white;
+    background-color: rgb(172, 165, 156);
     border-radius: 50%;
     display: flex;
     justify-content: flex-start;
+
+    
 }
 .logo {
     position: absolute;
@@ -44,37 +49,41 @@ header {
     left: 45%;
     transform-origin: 10px 110px;
 }
-#search, #btnSearch {
-    font-family: 'Roboto Condensed';
-}
-
-/* Search-Title-Genre-ReleasedInput field */
 aside {
-    background-color: rgb(172, 165, 156);
+    width: 300px;
     display: flex;
-    flex-direction: column;
-    /* height: 25px; */
+    justify-content: flex-end;
+    margin-left: auto;
+    padding-right: 2rem;
 }
 form {
     display: flex;
     justify-content: flex-end;
+    padding-top: 10px;
 }
-nav, nav h1 {
-    background-color:rgba(210, 198, 183, 0.245);
+.search, .btnSearch {
+    font-family: 'Roboto Condensed';
+}
+.btnSearch {
+    
+}
+/* Title-Genre-ReleasedInput field */
+nav {
+    /* background-color:rgba(210, 198, 183, 0.245); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
     gap: 2rem;
+    padding-bottom: 1rem;
 }
 nav input {
     font-family: 'Roboto Condensed';
     width: 200px;
     height: 25px;
     margin: auto;
-
 }
-#btnAddMovie {
+.btnAddMovie {
     font-family: 'Roboto Condensed';
     border-radius: 10px;
     height: 25px;
@@ -82,36 +91,6 @@ nav input {
     margin: auto;
 }
 /* Search-Favorites-Watched Display List */
-/* .collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-}
-
-.active, .collapsible:hover {
-background-color: #555;
-}
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-
-} */
-#searchDisplay {
-    display: flex;
-    justify-content: center;
-}
-fieldset {
-    padding: .5rem;
-}
 main {
     background-color: rgb(172, 165, 156);
     display: flex;
@@ -137,6 +116,20 @@ li {
     padding-top: .5rem;
     width: auto;
 }
+.searchDisplay {
+    display: flex;
+    justify-content: center;
+}
+fieldset {
+    padding: .5rem;
+}
+.favorite {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-width: 1000px;
+    gap: 1rem 2rem;
+}
 .watchedBtn {
     font-family: 'Roboto Condensed';
     border-radius: 5px;
@@ -144,27 +137,10 @@ li {
     height: 20px;
     cursor: pointer;
 }
-
-#favorite {
+.watched {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
     max-width: 1000px;
     gap: 1rem 2rem;
 }
-#watched {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    max-width: 1000px;
-    gap: 1rem 2rem;
-}
-
-/* background-color: bisque;
-font-family: Arial, Helvetica, sans-serif;
-letter-spacing: 5px;
-font-size: 28px;
-height: 150px;
-display: flex;
-justify-content: center;
-align-items: center; */

@@ -19,48 +19,44 @@
 </head>
 <body>
 <header>
+    <aside>
+        <form>
+            <input type="text" placeholder="Search movie" class="search" required>
+            <button class="btnSearch">Submit!</button>
+        </form> 
+    </aside>
     <figure class="circle">
         <div class="logo"></div>
         <div class="header-text">
             <h1>&#8226DE-VE-DE&#8226</h1>
         </div>
-    </figure>
+    </figure>  
 
 </header>
-<aside>
-        <h2>ADD A MOVIE IN YOUR FAVORITE LIST</h2>    
-    <form>
-        <input type="text" placeholder="Search movie" class="search" required>
-        <button class="btnSearch">Submit!</button>
-    </form> 
-  
-</aside>
+<h2>ADD A MOVIE IN YOUR FAVORITE LIST</h2>
 <form>
     <nav>
-        <input type="text" placeholder="Movie Title" id="titleInput" required>
-        <input type="text" placeholder="Genre" id="genre" required>
-        <input type="text" placeholder="Released" id="released" required>
-        <button id="btnAddMovie">Add your movie!</button>
+        <input type="text" placeholder="Movie Title" class="title" required>
+        <input type="text" placeholder="Genre" class="genre" required>
+        <input type="text" placeholder="Released" class="released" required>
+        <button class="btnAddMovie">Add your movie!</button>
     </nav>
 </form>
 <main>
     <section>   
         <fieldset>  
             <h2>SEARCH RESULT</h2> 
-                <article id="searchDisplay"></article>
+                <article class="searchDisplay"></article>
             </fieldset>
     </section>
     <section>
             <h2>FAVORITES &#9829</h2>
-            <article id="favorite"></article>
+            <article class="favorite"></article>
     </section>
     <section>
             <h2>WATCHED MOVIES</h2>
-            <article id="watched"></article>
+            <article class="watched"></article>
     </section>
 </main>
-<footer>
-    <div class="movie-img"></div>
-</footer>
 </body>
 </html>
