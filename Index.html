@@ -25,20 +25,24 @@
             <h1>&#8226DE-VE-DE&#8226</h1>
         </div>
     </figure>
+
 </header>
-<aside>    
-    <input type="text" placeholder="Search movie" id="search">
-    <button id="btnSearch">Submit!</button>
-
+<aside>
+        <h2>ADD A MOVIE IN YOUR FAVORITE LIST</h2>    
+    <form>
+        <input type="text" placeholder="Search movie" class="search" required>
+        <button class="btnSearch">Submit!</button>
+    </form> 
+  
 </aside>
-<nav>
-    <h1>ADD A MOVIE IN YOUR FAVORITE LIST</h1>
-    <input type="text" placeholder="Movie Title" id="title">
-    <input type="text" placeholder="Genre" id="genre">
-    <input type="text" placeholder="Released" id="released">
-    <button id="btnAddMovie">Add your movie!</button>
-</nav>
-
+<form>
+    <nav>
+        <input type="text" placeholder="Movie Title" id="titleInput" required>
+        <input type="text" placeholder="Genre" id="genre" required>
+        <input type="text" placeholder="Released" id="released" required>
+        <button id="btnAddMovie">Add your movie!</button>
+    </nav>
+</form>
 <main>
     <section>   
         <fieldset>  

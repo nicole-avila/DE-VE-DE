@@ -1,11 +1,11 @@
 import { db, collection, getDocs } from "./modules/firebase.js";
 import { saveToDatabase, removeFromDatabase } from "./modules/save-deleteDatabase.js";
-import { showSearchResult } from "./modules/searchQuery.js";
+import { fetchMovieCollection } from "./modules/searchQuery.js";
 
 const header          = document.querySelector(`.header-text h1`);
 
 const btn             = document.querySelector(`#btnAddMovie`);
-const title           = document.querySelector(`#title`);
+const title           = document.querySelector(`#titleInput`);
 const genre           = document.querySelector(`#genre`);
 const released        = document.querySelector(`#released`);
 
@@ -15,25 +15,6 @@ const watchedDisplay  = document.querySelector(`#watched`);
 
 header.innerHTML = header.innerText.split("").map((char, i) =>
   `<span style="transform:rotate(${i* 20}deg)">${char}</span>`).join("")
-
-
-// const coll = document.querySelector(`.collapsible`);
-// let i;
-
-//   for(i = 0; i < coll.length; i++) {
-//     coll[i].addEventListener(`click`, function() {
-//       console.log(`click`);
-  
-//       this.classList.toggle(`active`);
-//       toSeeMovie = this.nextElementSibling;
-
-//       if (content.style.display === `block`) {
-//         content.style.display = `none`
-//       } else {
-//         content.style.display = `block`;
-//       }
-//     });
-//   }
 
 let movieInput = {
   title: ``,
@@ -99,7 +80,6 @@ function removeMovieInput() {
       const delTitle = document.querySelector(`#title-${deleteMovieId}`);
       const delGenre = document.querySelector(`#genre-${deleteMovieId}`);
       const delRelesed = document.querySelector(`#released-${deleteMovieId}`);
-      // console.log(elem);
 
       movieText.title = delTitle.innerText;
       movieText.genre = delGenre.innerText;
@@ -111,4 +91,4 @@ function removeMovieInput() {
 
 }
 
-export { getMovieInput, getCompletedMovies, showSearchResult } 
+export { getMovieInput, getCompletedMovies, fetchMovieCollection } 

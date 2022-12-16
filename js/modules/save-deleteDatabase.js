@@ -1,5 +1,5 @@
 /* 
-Here can you find two function. One for saving all inputValue to the database and 
+Here can you find two function. One for saving all input-Value to the database and 
 the other function removing doc/object from the database, and adding in 
 another collection, "completedMovies"
 
