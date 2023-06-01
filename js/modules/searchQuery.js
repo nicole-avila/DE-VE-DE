@@ -46,5 +46,3 @@ async function fetchMovieCollection(searchValue) {
       console.log(error);
     }
   }
-
-export { fetchMovieCollection }
